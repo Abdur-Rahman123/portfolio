@@ -1,0 +1,284 @@
+:root {
+    --navy: #0a192f;
+    --light-slate: #8892b0;
+    --lightest-slate: #ccd6f6;
+    --green: #64ffda;
+    --white: #e6f1ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--navy);
+    color: var(--light-slate);
+    line-height: 1.6;
+    padding: 5rem;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 4rem;
+}
+
+.left-sidebar {
+    /* position: sticky; */
+    top: 5rem;
+    height: fit-content;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.left-sidebar:hover,
+.left-sidebar:focus-within {
+    opacity: 1;
+}
+
+h1 {
+    color: var(--lightest-slate);
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    color: var(--lightest-slate);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.nav {
+    margin-top: 3rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    cursor: pointer;
+    color: var(--light-slate);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    color: var(--white);
+    opacity: 1;
+    transform: translateX(10px);
+}
+
+.nav-item::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background-color: var(--light-slate);
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover::before {
+    width: 3rem;
+    background-color: var(--white);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+}
+
+.social-icons a {
+    color: var(--light-slate);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.experience-item,
+.about-content {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.project-task {
+    margin-left: 30px !important;
+}
+
+.experience-item:hover,
+.experience-item:focus-within,
+.about-content:hover,
+.about-content:focus-within {
+    opacity: 1;
+}
+
+.main-content p {
+    margin-bottom: 2rem;
+}
+
+
+.experience-item {
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+}
+
+.experience-date {
+    color: var(--light-slate);
+    font-family: monospace;
+}
+
+.experience-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    color: var(--lightest-slate);
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.tags {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    background-color: rgba(100, 255, 218, 0.1);
+    color: var(--green);
+    padding: 0.25rem 0.75rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background-color: rgba(100, 255, 218, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Parent group class */
+.experience-list {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr;
+    padding-bottom: 0.25rem;
+    /* pb-1 */
+    transition: all 0.2s ease-in-out;
+    /* transition-all */
+}
+
+/* Small screens (≥640px) */
+@media (min-width: 640px) {
+    .experience-list {
+        /* grid-template-rows: repeat(8, 1fr); */
+        /* sm:grid-cols-8 */
+        gap: 2rem;
+        /* sm:gap-8 */
+    }
+}
+
+/* Medium screens (≥768px) */
+@media (min-width: 768px) {
+    .experience-list {
+        gap: 1rem;
+        /* md:gap-4 */
+    }
+}
+
+/* Large screens (≥1024px) hover state */
+@media (min-width: 1024px) {
+    .experience-item:hover {
+        opacity: 1 !important;
+        border-radius: 0.25rem;
+
+        /* lg:hover:!opacity-100 */
+    }
+}
+
+/* Large screens (≥1024px) group-hover with a parent group and specific child (list) */
+@media (min-width: 1024px) {
+    .experience-list.experience-item:hover {
+        opacity: 0.5;
+        border-radius: 0.25rem;
+        color: red;
+        /* lg:group-hover/list:opacity-50 */
+    }
+}
+
+
+.experience-item {
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+}
+
+.experience-date {
+    color: var(--light-slate);
+    font-family: monospace;
+}
+
+.experience-title {
+    color: var(--lightest-slate);
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.tags {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: rgba(100, 255, 218, 0.1);
+    color: var(--green);
+    padding: 0.25rem 0.75rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+}
+
+.about,
+.experience {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        padding: 2rem;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .about,
+    .experience {
+        display: inline-block;
+    }
+}
